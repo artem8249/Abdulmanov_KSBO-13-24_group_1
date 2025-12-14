@@ -15,6 +15,7 @@ from eda_cli.core import (
 def _sample_df() -> pd.DataFrame:
     return pd.DataFrame(
         {
+            "user_id": [1, 1, 2, 3],
             "age": [10, 20, 30, None],
             "height": [140, 150, 160, 170],
             "city": ["A", "B", "A", None],
@@ -27,7 +28,7 @@ def test_summarize_dataset_basic():
     summary = summarize_dataset(df)
 
     assert summary.n_rows == 4
-    assert summary.n_cols == 3
+    assert summary.n_cols == 4
     assert any(c.name == "age" for c in summary.columns)
     assert any(c.name == "city" for c in summary.columns)
 
@@ -47,7 +48,7 @@ def test_missing_table_and_quality_flags():
     flags = compute_quality_flags(summary, missing_df, df)
     assert 0.0 <= flags["quality_score"] <= 1.0
     assert flags["has_constant_columns"] == False
-    assert flags["has_suspicious_id_duplicates"] == False
+    assert flags["has_suspicious_id_duplicates"] == True
 
 
 def test_correlation_and_top_categories():
