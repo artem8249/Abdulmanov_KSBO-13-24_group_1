@@ -246,21 +246,20 @@ async def quality_from_csv(file: UploadFile = File(...)) -> QualityResponse:
 
 # ---------- /quality-flags-from-csv: реальный CSV через нашу EDA-логику с добавлением новых флагов ----------
 
+class FlagResponse(BaseModel):
+
+    flags: dict[str, bool] | None = Field(
+        default=None,
+        description="Булевы флаги с подробностями (например, too_few_rows, too_many_missing)",
+    )
 
 @app.post(
     "/quality-flags-from-csv",
-    response_model=QualityResponse,
+    response_model=FlagResponse,
     tags=["quality"],
     summary="Оценка качества по CSV-файлу с использованием EDA-ядра с добавлением новых флагов",
 )
-async def quality_from_csv(file: UploadFile = File(...)) -> QualityResponse:
-    """
-    Эндпоинт, который принимает CSV-файл, запускает EDA-ядро
-    (summarize_dataset + missing_table + compute_quality_flags)
-    и возвращает оценку качества данных.
-
-    Именно это по сути связывает S03 (CLI EDA) и S04 (HTTP-сервис).
-    """
+async def quality_flags_from_csv(file: UploadFile = File(...)) -> FlagResponse:
 
     start = perf_counter()
 
@@ -283,18 +282,6 @@ async def quality_from_csv(file: UploadFile = File(...)) -> QualityResponse:
     missing_df = missing_table(df)
     flags_all = compute_quality_flags(summary, missing_df)
 
-    # Ожидаем, что compute_quality_flags вернёт quality_score в [0,1]
-    score = float(flags_all.get("quality_score", 0.0))
-    score = max(0.0, min(1.0, score))
-    ok_for_model = score >= 0.7
-
-    if ok_for_model:
-        message = "CSV выглядит достаточно качественным для обучения модели (по текущим эвристикам)."
-    else:
-        message = "CSV требует доработки перед обучением модели (по текущим эвристикам)."
-
-    latency_ms = (perf_counter() - start) * 1000.0
-
     # Оставляем только булевы флаги для компактности
     flags_bool: dict[str, bool] = {
         key: bool(value)
@@ -302,26 +289,6 @@ async def quality_from_csv(file: UploadFile = File(...)) -> QualityResponse:
         if isinstance(value, bool)
     }
 
-    # Размеры датасета берём из summary (если там есть поля n_rows/n_cols),
-    # иначе — напрямую из DataFrame.
-    try:
-        n_rows = int(getattr(summary, "n_rows"))
-        n_cols = int(getattr(summary, "n_cols"))
-    except AttributeError:
-        n_rows = int(df.shape[0])
-        n_cols = int(df.shape[1])
-
-    print(
-        f"[quality-from-csv] filename={file.filename!r} "
-        f"n_rows={n_rows} n_cols={n_cols} score={score:.3f} "
-        f"latency_ms={latency_ms:.1f} ms"
-    )
-
-    return QualityResponse(
-        ok_for_model=ok_for_model,
-        quality_score=score,
-        message=message,
-        latency_ms=latency_ms,
+    return FlagResponse(
         flags=flags_bool,
-        dataset_shape={"n_rows": n_rows, "n_cols": n_cols},
     )
