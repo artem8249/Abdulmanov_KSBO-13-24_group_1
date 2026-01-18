@@ -1,14 +1,44 @@
 {
-    "algo": "kmeans",
-    "params": {
-        "k": 2
+    "df1": {
+        "algo": "kmeans",
+        "params": {
+            "k": 2
+        },
+        "metrics": {
+            "silhouette": 0.5216395622404244,
+            "davies_bouldin": 0.6853295219054455,
+            "calinski_harabasz": 11786.954622671537
+        },
+        "inertia": 48425.90697659398,
+        "n_clusters": 2,
+        "noise_frac": 0.0
     },
-    "metrics": {
-        "silhouette": 0.5216395622404244,
-        "davies_bouldin": 0.6853295219054455,
-        "calinski_harabasz": 11786.954622671537
+    "df2": {
+        "algo": "kmeans",
+        "params": {
+            "k": 2
+        },
+        "metrics": {
+            "silhouette": 0.30686100177016024,
+            "davies_bouldin": 1.3234721699867633,
+            "calinski_harabasz": 3573.3933329348465
+        },
+        "inertia": 16588.501032295575,
+        "n_clusters": 2,
+        "noise_frac": 0.0
     },
-    "inertia": 48425.90697659398,
-    "n_clusters": 2,
-    "noise_frac": 0.0
+    "df3": {
+        "algo": "kmeans",
+        "params": {
+            "k": 3
+        },
+        "metrics": {
+            "silhouette": 0.31553248183109256,
+            "davies_bouldin": 1.1577832240211146,
+            "calinski_harabasz": 6957.158106946739
+        },
+        "inertia": 31123.497444205757,
+        "n_clusters": 3,
+        "noise_frac": 0.0
+    }
 }
