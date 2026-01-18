@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "silhouette": 0.5216395622404244,
+      "davies_bouldin": 0.6853295219054455,
+      "calinski_harabasz": 11786.954622671537,
+      "name": "kmeans"
+    },
+    {
+      "silhouette": 0.5216395622404244,
+      "davies_bouldin": 0.6853295219054455,
+      "calinski_harabasz": 11786.954622671537,
+      "name": "dbscan"
+    },
+    {
+      "silhouette": 0.5216395622404244,
+      "davies_bouldin": 0.6853295219054455,
+      "calinski_harabasz": 11786.954622671537,
+      "name": "agg"
+    }
+  ]
+}

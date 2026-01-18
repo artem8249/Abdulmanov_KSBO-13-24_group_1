@@ -16,7 +16,7 @@ dependencies = [
     "pytest>=9.0.1",
     "python-multipart>=0.0.21",
     "typer>=0.20.0",
-    "uvicorn[standart]>=0.38.0",
+    "uvicorn[standard]>=0.38.0",
 ]
 
 [project.scripts]

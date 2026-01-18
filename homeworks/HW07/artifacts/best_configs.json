@@ -1,0 +1,14 @@
+{
+    "algo": "kmeans",
+    "params": {
+        "k": 2
+    },
+    "metrics": {
+        "silhouette": 0.5216395622404244,
+        "davies_bouldin": 0.6853295219054455,
+        "calinski_harabasz": 11786.954622671537
+    },
+    "inertia": 48425.90697659398,
+    "n_clusters": 2,
+    "noise_frac": 0.0
+}
