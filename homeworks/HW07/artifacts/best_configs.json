@@ -23,7 +23,7 @@
             "davies_bouldin": 1.3234721699867633,
             "calinski_harabasz": 3573.3933329348465
         },
-        "inertia": 16588.50103229558,
+        "inertia": 16588.501032295575,
         "n_clusters": 2,
         "noise_frac": 0.0
     },
