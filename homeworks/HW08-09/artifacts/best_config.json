@@ -11,14 +11,22 @@
     },
     "training": {
         "optimizer": "Adam",
+        "momentum": 0.0,
+        "weight_decay": 0.0,
+        "fast_mode": false,
         "learning_rate": 0.001,
         "criterion": "CrossEntropyLoss",
         "epochs": 50,
+        "epochs_trained": 15,
         "early_stopping": {
             "patience": 4,
             "min_delta": 0.0005
         }
     },
     "seed": 42,
-    "dataset": "EMNIST"
+    "dataset": "EMNIST",
+    "best_val_accuracy": 0.8653,
+    "best_val_loss": 0.4168,
+    "test_loss": 0.4503,
+    "test_accuracy": 0.8598
 }
