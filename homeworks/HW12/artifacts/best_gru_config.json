@@ -7,12 +7,12 @@
     "batch_size": 64,
     "n_epochs": 30,
     "best_epoch": 27,
-    "best_val_mae": 6.327925682067871,
-    "best_val_rmse": 7.886870745106805,
-    "best_val_mape": 4.192569255828857,
-    "test_mae": 6.576505184173584,
-    "test_rmse": 8.313167229741529,
-    "test_mape": 4.247937202453613,
+    "best_val_mae": 5.62936544418335,
+    "best_val_rmse": 7.241146864707259,
+    "best_val_mape": 3.7800722122192383,
+    "test_mae": 6.768898963928223,
+    "test_rmse": 8.466688066991157,
+    "test_mape": 4.347163200378418,
     "seed": 42,
     "device": "cpu"
 }
