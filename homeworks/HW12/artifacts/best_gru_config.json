@@ -13,6 +13,7 @@
     "test_mae": 6.768898963928223,
     "test_rmse": 8.466688066991157,
     "test_mape": 4.347163200378418,
+    "scaler": "StandardScaler(target)",
     "seed": 42,
     "device": "cpu"
 }
