@@ -1,4 +1,4 @@
-,query,before_sources,after_sources,changed
+,query,before_retrieved_sources,after_retrieved_sources,changed
 0,"Что, согласно легенде, упало на голову Ньютону, натолкнув его на открытие закона всемирного тяготения?","['science_04', 'science_04', 'science_04', 'science_10', 'science_10', 'science_08', 'science_08']","['science_04', 'science_04', 'science_04', 'science_10', 'new_sci_01', 'science_10', 'science_08']",True
 1,Какой именно пример (животное и его признак) приводит Ламарк в своей эволюционной теории как доказательство упражнения органов?,"['science_02', 'science_13', 'science_04', 'science_05', 'science_04', 'science_05', 'science_15']","['new_sci_02', 'new_sci_02', 'science_02', 'science_13', 'science_04', 'new_sci_02', 'science_05']",True
 2,"Какую элементарную частицу открыл Джозеф Джон Томсон, и во сколько раз она легче атома водорода?","['science_15', 'science_14', 'science_05', 'science_05', 'science_06', 'science_05', 'science_07']","['new_sci_03', 'science_15', 'new_sci_03', 'science_14', 'science_05', 'science_05', 'science_06']",True
