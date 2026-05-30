@@ -21,11 +21,7 @@ item_features = None
 user_history = {}
 
 try:
-    features_result = load_features_data(DATA_DIR) 
-    if isinstance(features_result, tuple):
-        item_features = features_result[1] 
-    else:
-        item_features = features_result
+    item_features = pd.read_csv(Path(DATA_DIR) / 'articles_features.csv', dtype={'article_id': str})
 
     artifacts_result = load_artifacts(ARTIFACTS_DIR)
     if artifacts_result and len(artifacts_result) > 5:
