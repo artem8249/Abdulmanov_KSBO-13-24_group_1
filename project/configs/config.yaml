@@ -1,0 +1,15 @@
+paths:
+  raw_data_dir: "data_for_project"
+  data_dir: "data"
+  artifacts_dir: "artifacts/train"
+
+preprocessing:
+  cutoff_days: 30
+  days_for_val/test: 7
+  chunk_size: 1000000
+  price_quantile_bins: 3
+
+api:
+  host: "127.0.0.1"
+  port: 8000
+  default_top_k: 20

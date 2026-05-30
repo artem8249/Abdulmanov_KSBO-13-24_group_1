@@ -1,0 +1,9 @@
+retrieval:
+  k_candidates: 150
+
+ranking:
+  default_top_k: 20
+
+cold_start:
+  default_age_group: "25-34"
+  default_news_freq: "NONE"

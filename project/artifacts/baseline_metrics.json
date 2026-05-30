@@ -1,0 +1,14 @@
+{
+    "global_popularity": {
+        "val_precision_20": 0.005016202927701419,
+        "val_recall_20": 0.02277536312595324,
+        "test_precision_20": 0.004134594577884942,
+        "test_recall_20": 0.018578842627896466
+    },
+    "age_based_popularity": {
+        "val_precision_20": 0.00487696949379819,
+        "val_recall_20": 0.03673417505498346,
+        "test_precision_20": 0.004179197413918734,
+        "test_recall_20": 0.030785086020480523
+    }
+}

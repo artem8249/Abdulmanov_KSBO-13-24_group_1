@@ -1,0 +1,25 @@
+retrieval:
+  k_candidates: 100
+
+features:
+  - faiss_score
+  - faiss_rank
+  - price
+  - popularity
+  - price_diff
+
+lightgbm_params:
+  base:
+    objective: "binary"
+    metric: "auc"
+    boosting_type: "gbdt"
+    is_unbalance: true
+    random_state: 42
+    verbose: -1
+    feature_pre_filter: false
+  tuning:
+    num_boost_round: 200
+    stopping_rounds: 20
+  final:
+    num_boost_round: 500
+    stopping_rounds: 30

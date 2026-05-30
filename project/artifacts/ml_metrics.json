@@ -1,0 +1,20 @@
+{
+    "random_forest": {
+        "val_precision_20": 0.003896748240026819,
+        "val_recall_20": 0.027750180615527597,
+        "test_precision_20": 0.0032743339383420997,
+        "test_recall_20": 0.023234006917279584
+    },
+    "hist_gradient_boosting": {
+        "val_precision_20": 0.0034099899430103924,
+        "val_recall_20": 0.024401937900435315,
+        "test_precision_20": 0.002831176057550907,
+        "test_recall_20": 0.02005072532387059
+    },
+    "tuned_hist_gradient_boosting": {
+        "val_precision_20": 0.003481059336238686,
+        "val_recall_20": 0.024978631434855868,
+        "test_precision_20": 0.002921264954094408,
+        "test_recall_20": 0.020654612378954187
+    }
+}
